@@ -1,0 +1,25 @@
+package com.yuesth.zikirnspin;
+
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
+
+public class Alhamdulillah extends AppCompatActivity {
+
+    int skorAlnol=0;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_alhamdulillah);
+    }
+
+    public void tambahAl(View v){
+        if(v.getId()==R.id.plusAl){
+            skorAlnol+=1;
+        }
+
+        TextView skorAlTextView = (TextView) findViewById(R.id.skorAl);
+        skorAlTextView.setText(String.valueOf(skorAlnol));
+    }
+}
