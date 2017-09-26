@@ -1,0 +1,45 @@
+package com.yuesth.zikirnspin;
+
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.webkit.WebView;
+import android.widget.ImageButton;
+import android.content.Intent;
+
+public class PrefaceActivity extends AppCompatActivity {
+
+    ImageButton send;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_preface);
+
+        send = (ImageButton) findViewById(R.id.send);
+        send.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intentPre = new Intent(view.getContext(),MainActivity.class);
+                startActivity(intentPre);
+            }
+        });
+
+        WebView wv1 = (WebView) findViewById(R.id.webview1);
+        String textnya1 = "Assalamu'alaikum Wr.Wb. \n Perkenalkan saya Yues Tadrik Ilkomp'16";
+        wv1.loadData("<p style= \"text-align: justify\">"+textnya1+"</p>", "text/html", "UTF-8");
+
+        WebView wv2 = (WebView) findViewById(R.id.webview2);
+        String textnya2 = "Adapun tujuan dibuatnya aplikasi ini untuk syarat recruitment OMAH TI divisi Mobile Apps";
+        wv2.loadData("<p style= \"text-align: justify\">"+textnya2+"</p>", "text/html", "UTF-8");
+
+        WebView wv3 = (WebView) findViewById(R.id.webview3);
+        String textnya3 = "Kegunaan utama dari aplikasi ini agar khalayak dapat memperbanyak zikirnya diwaktu lapang maupun sempit, serta terdapat fitur Spin untuk memilih orang dalam bermain ToD(contohnya)";
+        wv3.loadData("<p style= \"text-align: justify\">"+textnya3+"</p>", "text/html", "UTF-8");
+
+        WebView wv4 = (WebView) findViewById(R.id.webview4);
+        String textnya4 = "Terimah kasih atas perhatiannya.\n Wassalamu'alaikum Wr.Wb";
+        wv4.loadData("<p style= \"text-align: justify\">"+textnya4+"</p>", "text/html", "UTF-8");
+
+    }
+}
